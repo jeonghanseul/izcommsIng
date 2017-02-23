@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="scdulVO">
+
+	<typeAlias  alias="scdulSearchVO" type="egovframework.example.sample.service.ScdulDefaultVO"/>
+	<typeAlias  alias="scdulVO" type="egovframework.example.sample.service.ScdulVO"/>
+	
+	<resultMap id="scdulMap" class="egovframework.example.sample.service.ScdulVO">
+	    <result property="No" column="NO"/>
+	    <result property="member" column="MEMBER"/>
+	    <result property="status" column="STATUS"/>
+	    <result property="company" column="COMPANY"/>
+	    <result property="meetingDate" column="MEETING_DATE"/>
+	    <result property="meetingHour" column="MEETING_HOUR"/>
+    	<result property="meetingMin" column="MEETING_MIN"/>
+    	<result property="address" column="ADDRESS"/>
+    	<result property="detailAddress" column="DETAIL_ADDRESS"/>
+    	<result property="adManager" column="AD_MANAGER"/>
+	    <result property="type" column="TYPE"/>
+	    <result property="telNo" column="TEL_NO"/>
+	    <result property="email" column="EMAIL"/>
+    	<result property="etcTelNo" column="ETC_TEL_NO"/>
+    	<result property="etc" column="ETC"/>
+    	<result property="sms" column="SMS"/>
+    	<result property="message" column="MESSAGE"/>
+    	<result property="updateUser" column="UPDATE_USER"/>
+    	<result property="updateDate" column="UPDATE_DATE"/>
+    </resultMap>
+	<resultMap id="scdulMap2" class="egovframework.example.sample.service.ScdulVO">
+	    <result property="No" column="NO"/>
+	    <result property="member" column="MEMBER"/>
+	    <result property="status" column="STATUS"/>
+	    <result property="company" column="COMPANY"/>
+	    <result property="meetingDate" column="MEETING_DATE"/>
+	    <result property="meetingHour" column="MEETING_HOUR"/>
+    	<result property="meetingMin" column="MEETING_MIN"/>
+    	<result property="address" column="ADDRESS"/>
+    	<result property="detailAddress" column="DETAIL_ADDRESS"/>
+    	<result property="adManager" column="AD_MANAGER"/>
+    	<result property="adType1" column="AD_TYPE1"/>
+    	<result property="adType2" column="AD_TYPE2"/>
+    	<result property="adType3" column="AD_TYPE3"/>
+	    <result property="type" column="TYPE"/>
+	    <result property="telNo" column="TEL_NO"/>
+	    <result property="email" column="EMAIL"/>
+    	<result property="etcTelNo" column="ETC_TEL_NO"/>
+    	<result property="etc" column="ETC"/>
+    	<result property="sms" column="SMS"/>
+    	<result property="smsTime" column="SMS_TIME"/>
+    	<result property="message" column="MESSAGE"/>
+    	<result property="messageTime" column="MESSAGE_TIME"/>
+    	<result property="updateUser" column="UPDATE_USER"/>
+    	<result property="updateDate" column="UPDATE_DATE"/>
+    </resultMap>
+    
+	<resultMap id="mettingMap" class="egovframework.example.sample.service.ScdulVO">
+	    <result property="meetingDate" column="MEETING_DATE"/>
+    </resultMap>
+
+	<resultMap id="scdulMap3" class="egovframework.example.sample.service.ScdulVO">
+	    <result property="meetingDate" column="MEETING_DATE"/>
+	    <result property="dayCount" column="DAYCOUNT"/>
+    </resultMap>
+    
+    <select id="scdulDAO.selectSculList" resultMap="scdulMap">
+       SELECT * FROM CALENDAR
+       WHERE MEETING_DATE <![CDATA[>=]]> #meetingDate#
+       AND MEETING_DATE <![CDATA[<=]]> LAST_DAY(#meetingDate#)
+       <dynamic prepend="AND">
+       		<isNotEqual property="status" compareValue="ALL">
+       			STATUS = #status#
+       		</isNotEqual>
+       </dynamic>
+    </select>
+    
+    <select id="scdulDAO.selectSculToDoList" resultMap="scdulMap">
+       SELECT * FROM CALENDAR
+       WHERE MEETING_DATE <![CDATA[>=]]> #meetingDate#
+       AND MEETING_DATE <![CDATA[<=]]> LAST_DAY(#meetingDate#)
+       AND STATUS !='TR' AND STATUS !='MR'
+    </select>
+    
+    <select id="scdulDAO.selectCountDayList" resultMap="scdulMap3">
+       SELECT MEETING_DATE,COUNT(*)AS DAYCOUNT FROM CALENDAR
+       GROUP BY MEETING_DATE
+       HAVING MEETING_DATE <![CDATA[>=]]> #meetingDate#
+       AND MEETING_DATE <![CDATA[<=]]> LAST_DAY(#meetingDate#)
+    </select>
+
+    <select id="scdulDAO.selectScdulDayList" resultMap="mettingMap">
+       SELECT DISTINCT(MEETING_DATE) FROM CALENDAR
+       WHERE MEETING_DATE <![CDATA[>=]]> #meetingDate#
+       AND MEETING_DATE <![CDATA[<=]]> LAST_DAY(#meetingDate#)
+    </select>
+    
+    <select id="scdulDAO.selectSearchScdulList" parameterClass="scdulVO" resultMap="scdulMap2">
+       SELECT * FROM CALENDAR
+       WHERE 
+       	ADDRESS LIKE  '%$searchKeyword$%'
+       	OR AD_MANAGER LIKE '%$searchKeyword$%'
+       	OR MEMBER LIKE '%$searchKeyword$%'
+       	OR TEL_NO LIKE '%$searchKeyword$%'
+       	LIMIT #firstIndex#, #lastIndex#
+    </select>
+    
+    <select id="scdulDAO.selectDailyScdulList" parameterClass="scdulVO" resultMap="scdulMap2">
+       SELECT * FROM CALENDAR
+       WHERE 
+       	MEETING_DATE = #meetingDate#
+       	LIMIT #firstIndex#, #lastIndex#
+    </select>
+    
+    <select id="scdulDAO.totalSelctSearchScdul" parameterClass="scdulVO"  resultClass="int">
+       SELECT COUNT(*) FROM CALENDAR
+       WHERE 
+       	ADDRESS LIKE  '%$searchKeyword$%' 
+       	OR AD_MANAGER LIKE '%$searchKeyword$%'
+       	OR MEMBER LIKE '%$searchKeyword$%'
+       	OR TEL_NO LIKE '%$searchKeyword$%'
+    </select>
+    
+    <select id="scdulDAO.totalSelctDailyScdulCount" parameterClass="scdulVO"  resultClass="int">
+       SELECT COUNT(*) FROM CALENDAR
+       WHERE 
+       	MEETING_DATE = #meetingDate#
+    </select>
+    
+    <insert id="scdulDAO.insertScdul">
+    	INSERT INTO CALENDAR
+    	(MEMBER, STATUS, COMPANY, MEETING_DATE, MEETING_HOUR, MEETING_MIN, ADDRESS, DETAIL_ADDRESS, AD_MANAGER, AD_TYPE1, AD_TYPE2, AD_TYPE3, TYPE, TEL_NO, EMAIL, ETC_TEL_NO, ETC, ADD_ETC, SMS, SMS_TIME, MESSAGE, MESSAGE_TIME) VALUES
+    	(#member#, #status#, #company#, #meetingDate#, #meetingHour#, #meetingMin#, #address#, #detailAddress#, #adManager#, #adType1#, #adType2#, #adType3#, #type#, #telNo#, #email#, #etcTelNo#, #etc#, #addEtc#, #sms#, #smsTime#, #message#, #messageTime#)
+    </insert>
+
+    <select id="scdulDAO.selectScdulView" resultMap="scdulMap2">
+       SELECT * FROM CALENDAR
+       WHERE NO = #No#
+    </select>
+    
+    <update id="scdulDAO.updateScdul">
+    	UPDATE CALENDAR
+    	SET
+    		MEMBER = #member#,
+    		STATUS = #status#,
+    		COMPANY = #company#,
+    		MEETING_DATE = #meetingDate#,
+    		MEETING_HOUR = #meetingHour#,
+    		MEETING_MIN = #meetingMin#,
+    		ADDRESS = #address#,
+    		DETAIL_ADDRESS = #detailAddress#,
+    		AD_MANAGER = #adManager#,
+    		AD_TYPE1 = #adType1#,
+    		AD_TYPE2 = #adType2#,
+    		AD_TYPE3 = #adType3#,
+    		TYPE = #type#,
+    		TEL_NO = #telNo#,
+    		EMAIL = #email#,
+    		ETC_TEL_NO = #etcTelNo#,
+    		ETC = #etc#,
+    		ADD_ETC = #addEtc#,
+    		SMS = #sms#,
+    		SMS_TIME = #smsTime#,
+    		MESSAGE = #message#
+    	WHERE NO = #No#
+    </update>
+</sqlMap>

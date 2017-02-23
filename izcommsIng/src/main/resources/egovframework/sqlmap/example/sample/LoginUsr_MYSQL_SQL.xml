@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="loginVO">
+
+	<typeAlias  alias="loginVO" type="egovframework.example.sample.service.LoginVO"/>
+	
+	<resultMap id="loginMap" class="egovframework.example.sample.service.LoginVO">
+		<result property="id" column="ID"/>
+	    <result property="pwd" column="PWD"/>
+	    <result property="name" column="NAME"/>
+	    <result property="grade" column="GRADE"/>
+    </resultMap>
+    
+    <select id="loginDAO.actionLogin" resultMap="loginMap">
+    	 SELECT * FROM MEMBER
+      		WHERE ID = #id# AND PWD=#pwd#
+    </select>
+    
+    <select id="loginDAO.loginCheckId" resultMap="loginMap">
+    	 SELECT * FROM MEMBER
+      		WHERE ID = #id#
+    </select>
+    
+</sqlMap>

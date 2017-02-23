@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="memberVO">
+
+	<typeAlias  alias="memberSearchVO" type="egovframework.example.sample.service.MemberDefaultVO"/>
+	<typeAlias  alias="memberVO" type="egovframework.example.sample.service.MemberVO"/>
+	
+	<resultMap id="memberMap" class="egovframework.example.sample.service.MemberVO">
+	    <result property="id" column="ID"/>
+	    <result property="pwd" column="PWD"/>
+	    <result property="name" column="NAME"/>
+	    <result property="telNo" column="TEL_NO"/>
+	    <result property="email" column="EMAIL"/>
+	    <result property="grade" column="GRADE"/>
+	    <result property="memberGroup" column="MEMBER_GROUP"/>
+	    <result property="joinDate" column="JOIN_DATE"/>
+	    <result property="refireDate" column="REFIRE_DATE"/>
+	    <result property="address" column="ADDRESS"/>
+	    <result property="detailAddress" column="DETAIL_ADDRESS"/>
+    </resultMap>
+    
+    <select id="memberDAO.selectMemberList" parameterClass="memberVO" resultMap="memberMap">
+       SELECT * FROM MEMBER
+      LIMIT #firstIndex#, #lastIndex#
+    </select>
+    
+    <select id="memberDAO.selectMemberListCount" parameterClass="memberVO"  resultClass="int">
+       SELECT COUNT(*) FROM MEMBER
+    </select>
+    
+    <select id="memberDAO.checkId" parameterClass="memberVO"  resultClass="int">
+       SELECT COUNT(*) FROM MEMBER
+       WHERE ID=#id#
+    </select>
+    
+    <insert id="memberDAO.insertMember" parameterClass="memberVO" >
+    	INSERT INTO MEMBER
+    	(ID, PWD, NAME, TEL_NO, EMAIL, GRADE, MEMBER_GROUP, JOIN_DATE, REFIRE_DATE, ADDRESS, DETAIL_ADDRESS) VALUES
+    	(#id#, #pwd#, #name#, #telNo#, #email#, #grade#, #memberGroup#, #joinDate#, #refireDate#, #address#, #detailAddress#)
+    </insert>
+    
+    <select id="memberDAO.selectMemberById" parameterClass="memberVO" resultMap="memberMap">
+       SELECT * FROM MEMBER
+      WHERE ID = #id#
+    </select>
+    
+    <update id="memberDAO.updateMember" parameterClass="memberVO">
+    	UPDATE MEMBER
+    	SET
+    		PWD = #pwd#,
+    		NAME = #name#,
+    		TEL_NO = #telNo#,
+    		EMAIL = #email#,
+    		GRADE = #grade#,
+    		MEMBER_GROUP = #memberGroup#,
+    		JOIN_DATE = #joinDate#,
+    		REFIRE_DATE = #refireDate#,
+    		ADDRESS = #address#,
+    		DETAIL_ADDRESS = #detailAddress#
+    	WHERE ID = #id#
+    </update>
+</sqlMap>

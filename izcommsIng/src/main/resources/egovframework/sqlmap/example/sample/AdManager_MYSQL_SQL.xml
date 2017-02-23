@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="adManagerVO">
+
+	<typeAlias  alias="adManagerSearchVO" type="egovframework.example.sample.service.AdManagerDefaultVO"/>
+	<typeAlias  alias="adManagerVO" type="egovframework.example.sample.service.AdManagerVO"/>
+	
+	<resultMap id="adManagerMap" class="egovframework.example.sample.service.AdManagerVO">
+	    <result property="no" column="NO"/>
+	    <result property="adGroup" column="AD_GROUP"/>
+	    <result property="bizName" column="BIZ_NAME"/>
+	    <result property="bizType" column="BIZ_TYPE"/>
+	    <result property="bizUser" column="BIZ_USER"/>
+	    <result property="bizTelNo" column="BIZ_TEL_NO"/>
+	    <result property="bizArea" column="BIZ_AREA"/>
+	    <result property="bizEmail" column="BIZ_EMAIL"/>
+	    <result property="bizCounsel" column="BIZ_COUNSEL"/>
+	    <result property="bizAsk" column="BIZ_ASK"/>
+	    <result property="bizAllot" column="BIZ_ALLOT"/>
+	    <result property="bizDate" column="BIZ_DATE"/>
+	    <result property="adCenter" column="AD_CENTER"/>
+	    <result property="adCenter1" column="AD_CENTER1"/>
+	    <result property="adCenter2" column="AD_CENTER2"/>
+	    <result property="adCenter3" column="AD_CENTER3"/>
+	    <result property="adCenter4" column="AD_CENTER4"/>
+    </resultMap>
+    
+	<resultMap id="adManagerViewMap" class="egovframework.example.sample.service.AdManagerVO">
+	    <result property="no" column="NO"/>
+	    <result property="adGroup" column="AD_GROUP"/>
+	    <result property="bizName" column="BIZ_NAME"/>
+	    <result property="bizType" column="BIZ_TYPE"/>
+	    <result property="bizUser" column="BIZ_USER"/>
+	    <result property="bizTelNo" column="BIZ_TEL_NO"/>
+	    <result property="bizArea" column="BIZ_AREA"/>
+	    <result property="bizEmail" column="BIZ_EMAIL"/>
+	    <result property="bizCounsel" column="BIZ_COUNSEL"/>
+	    <result property="bizAsk" column="BIZ_ASK"/>
+	    <result property="bizAllot" column="BIZ_ALLOT"/>
+	    <result property="bizDate" column="BIZ_DATE"/>
+	    <result property="adExpectMoney" column="AD_EXPECT_MONEY"/>
+	    <result property="adAding" column="AD_ADING"/>
+	    <result property="adExperienceDate" column="AD_EXPERIENCE_DATE"/>
+    </resultMap>
+    
+    <select id="adManagerDAO.selectAdManagerList" parameterClass="adManagerVO" resultMap="adManagerMap">
+       SELECT * FROM BIZMANAGER
+       <dynamic prepend="where">
+       		<isNotNull property="adGroup" prepend="and">
+       			AD_GROUP=#adGroup#
+       		</isNotNull>
+       		<isNotNull property="bizAllot" prepend="and">
+       			BIZ_ALLOT=#bizAllot#
+       		</isNotNull>
+       		<isEqual property="searchCondition" compareValue="ALL" prepend="and">
+       			BIZ_USER LIKE '%$searchKeyword$%' OR
+       			BIZ_TEL_NO LIKE '%$searchKeyword$%' OR
+       			BIZ_TYPE LIKE '%$searchKeyword$%' OR
+       			BIZ_ASK LIKE '%$searchKeyword$%' OR
+       			BIZ_AREA LIKE '%$searchKeyword$%' 
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="User" prepend="and">
+       			BIZ_USER LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Tel" prepend="and">
+       			BIZ_TEL_NO LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Type" prepend="and">
+       			BIZ_TYPE LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Ask" prepend="and">
+       			BIZ_ASK LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Area" prepend="and">
+       			BIZ_AREA LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad" prepend="and">
+       			AD_CENTER != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad1" prepend="and">
+       			AD_CENTER1 != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad2" prepend="and">
+       			AD_CENTER2 != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad3" prepend="and">
+       			AD_CENTER3 != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad4" prepend="and">
+       			AD_CENTER4 != ''
+       		</isEqual>
+       </dynamic>
+       ORDER BY BIZ_DATE DESC
+       LIMIT #recordCountPerPage# OFFSET #firstIndex#		
+    </select>
+    
+    <select id="adManagerDAO.selectAdManagerListCount" parameterClass="adManagerVO"  resultClass="int">
+       SELECT COUNT(*) FROM BIZMANAGER
+       <dynamic prepend="where">
+       		<isNotNull property="adGroup" prepend="and">
+       			AD_GROUP=#adGroup#
+       		</isNotNull>
+       		<isNotNull property="bizAllot" prepend="and">
+       			BIZ_ALLOT=#bizAllot#
+       		</isNotNull>
+       		<isEqual property="searchCondition" compareValue="ALL" prepend="and">
+       			BIZ_USER LIKE '%$searchKeyword$%' OR
+       			BIZ_TEL_NO LIKE '%$searchKeyword$%' OR
+       			BIZ_TYPE LIKE '%$searchKeyword$%' OR
+       			BIZ_ASK LIKE '%$searchKeyword$%' OR
+       			BIZ_AREA LIKE '%$searchKeyword$%' 
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="User" prepend="and">
+       			BIZ_USER LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Tel" prepend="and">
+       			BIZ_TEL_NO LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Type" prepend="and">
+       			BIZ_TYPE LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Ask" prepend="and">
+       			BIZ_ASK LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="searchCondition" compareValue="Area" prepend="and">
+       			BIZ_AREA LIKE '%$searchKeyword$%'
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad" prepend="and">
+       			AD_CENTER != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad1" prepend="and">
+       			AD_CENTER1 != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad2" prepend="and">
+       			AD_CENTER2 != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad3" prepend="and">
+       			AD_CENTER3 != ''
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="Ad4" prepend="and">
+       			AD_CENTER4 != ''
+       		</isEqual>
+       </dynamic>
+    </select>
+    
+    <select id="adManagerDAO.selectAdManagerView" parameterClass="adManagerVO" resultMap="adManagerViewMap">
+       SELECT * FROM BIZMANAGER
+       WHERE NO = #no#
+    </select>
+    
+    <update id="adManagerDAO.updateAdManagerAllot" parameterClass="adManagerVO">
+    	UPDATE BIZMANAGER
+    		SET BIZ_ALLOT = 'Y'
+    		WHERE NO = #no#
+    </update>
+    
+    <delete id="adManagerDAO.deleteAdManager" parameterClass="adManagerVO">
+    	DELETE FROM BIZMANAGER
+    	WHERE NO = #no#
+    </delete>
+    
+    <insert id="adManagerDAO.insertAdManager" parameterClass="adManagerVO" >
+    	INSERT INTO BIZMANAGER
+    	(AD_GROUP, BIZ_NAME, BIZ_TYPE, BIZ_USER, BIZ_TEL_NO, BIZ_AREA, BIZ_EMAIL, BIZ_COUNSEL, BIZ_ASK, BIZ_ALLOT, BIZ_DATE, AD_EXPECT_MONEY, AD_ADING, AD_EXPERIENCE_DATE) VALUES
+    	(#adGroup#, #bizName#, #bizType#, #bizUser#, #bizTelNo#, #bizArea#, #bizEmail#, #bizCounsel#, #bizAsk#, 'N', NOW(), #adExpectMoney#, #adAding#, #adExperienceDate#)
+    </insert>
+</sqlMap>

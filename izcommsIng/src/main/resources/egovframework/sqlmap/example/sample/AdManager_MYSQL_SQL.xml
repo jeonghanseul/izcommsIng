@@ -140,6 +140,21 @@
        		<isEqual property="adCenter" compareValue="Ad4" prepend="and">
        			AD_CENTER4 != ''
        		</isEqual>
+       		<isEqual property="adCenter" compareValue="chartAd0" prepend="and">
+       			AD_CENTER = 'Ad'
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="chartAd1" prepend="and">
+       			AD_CENTER1 = 'Ad1'
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="chartAd2" prepend="and">
+       			AD_CENTER2 = 'Ad2'
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="chartAd3" prepend="and">
+       			AD_CENTER3 = 'Ad3'
+       		</isEqual>
+       		<isEqual property="adCenter" compareValue="chartAd4" prepend="and">
+       			AD_CENTER4 = 'Ad4'
+       		</isEqual>
        </dynamic>
     </select>
     

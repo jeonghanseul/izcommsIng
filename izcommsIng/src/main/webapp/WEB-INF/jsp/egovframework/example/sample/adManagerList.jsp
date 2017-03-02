@@ -184,6 +184,9 @@
 				</c:choose>
 			</div>
 			
+			<div>
+				<a href="./adManagerChartView.do">차트확인하기</a>
+			</div>
 			
 			<form:form commandName="adManagerVO" action="./adManagerList.do" id="listForm" name="listForm" method="get">
 				<div>

@@ -1,16 +1,21 @@
 package egovframework.example.sample.web;
 
-import egovframework.example.sample.service.AdManagerService;
-import egovframework.example.sample.service.AdManagerVO;
-import egovframework.rte.fdl.property.EgovPropertyService;
-import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import egovframework.example.sample.service.AdManagerService;
+import egovframework.example.sample.service.AdManagerVO;
+import egovframework.example.sample.service.MemberVO;
+import egovframework.rte.fdl.property.EgovPropertyService;
+import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 @Controller
 public class AdManagerController
@@ -67,7 +72,7 @@ public class AdManagerController
     }
     catch (Exception e)
     {
-      model.addAttribute("msg", "������ ���� ������.");
+      model.addAttribute("msg", "잘못된 접근 입니다.");
       model.addAttribute("url", "./adManagerList.do");
       
       return "common/error";
@@ -88,5 +93,35 @@ public class AdManagerController
   {
     this.adManagerService.insertAdManager(adManagerVO);
     return "redirect:/adManagerList.do";
+  }
+  
+  @RequestMapping("/adManagerChartView.do")
+	public String adManagerChartView(@ModelAttribute("adManagerVO") AdManagerVO adManagerVO, HttpServletRequest request, ModelMap model)throws Exception{
+		
+	  return "sample/adManagerChartView";
+	}
+	
+  
+  /**
+   * 차트 그리기 위한 ajax json 데이터
+ * @param adManagerVO
+ * @return
+ * @throws Exception
+ */
+@RequestMapping("/adChartCount.do")
+  public ModelAndView adChartCount()
+    throws Exception
+  {
+    ModelAndView mav = new ModelAndView("jsonView");
+    
+    for(int i=0; i<=4; i++){
+    	
+    	int value = adManagerService.selectCountAdCenter(i);
+    	mav.addObject("Ad"+i, value);
+    	System.out.println("-------------------------------------------------------");
+    	System.out.println("\t mav : "+mav);
+    	System.out.println("-------------------------------------------------------");
+    }
+    return mav;
   }
 }

@@ -3,8 +3,11 @@ package egovframework.example.sample.service.impl;
 import egovframework.example.sample.service.AdManagerService;
 import egovframework.example.sample.service.AdManagerVO;
 import egovframework.rte.fdl.cmmn.EgovAbstractServiceImpl;
+
 import java.util.List;
+
 import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 @Service("adManagerService")
@@ -52,9 +55,17 @@ public class AdManagerServiceImpl
     this.adManagerDAO.deleteAdManager(adManagerVO);
   }
   
-  public void insertAdManager(AdManagerVO adManagerVO)
-    throws Exception
+  public void insertAdManager(AdManagerVO adManagerVO) throws Exception
   {
     this.adManagerDAO.insertAdManager(adManagerVO);
+  }
+  
+  public int selectCountAdCenter(int i) throws Exception{
+	  AdManagerVO adManagerVO = new AdManagerVO(); 
+	  adManagerVO.setAdCenter("chartAd"+i);
+	  System.out.println("=======================================================");
+	  System.out.println("\t adManagerVO.getAdCenter : "+adManagerVO.getAdCenter());
+	  System.out.println("=======================================================");
+	  return this.selectAdManagerListCount(adManagerVO);
   }
 }

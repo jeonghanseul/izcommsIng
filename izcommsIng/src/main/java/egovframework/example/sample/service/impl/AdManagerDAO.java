@@ -44,4 +44,5 @@ public class AdManagerDAO
   {
     return (String)insert("adManagerDAO.insertAdManager", adManagerVO);
   }
+  
 }

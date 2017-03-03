@@ -22,8 +22,13 @@ $(document).ready(function(){
             url: url,
             dataType:'json',
             success: function(data) {
-            	$.each(data, function(key, value){
-					array.push([key, value]);
+            	
+            	const ordered = {};
+            	Object.keys(data).sort().forEach(function(key) {
+            	  ordered[key] = data[key];
+            	});
+            	$.each(ordered, function(key, value){
+            		array.push([key, value]);
    				});
             }
         });

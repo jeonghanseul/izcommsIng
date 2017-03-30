@@ -23,6 +23,7 @@
 	    <result property="adCenter2" column="AD_CENTER2"/>
 	    <result property="adCenter3" column="AD_CENTER3"/>
 	    <result property="adCenter4" column="AD_CENTER4"/>
+	    <result property="adKeyWord" column="AD_KEYWORD"/>
     </resultMap>
     
 	<resultMap id="adManagerViewMap" class="egovframework.example.sample.service.AdManagerVO">
@@ -155,6 +156,12 @@
        		<isEqual property="adCenter" compareValue="chartAd4" prepend="and">
        			AD_CENTER4 = 'Ad4'
        		</isEqual>
+       		<isNotNull property="fromDate" prepend="and">
+       			BIZ_DATE<![CDATA[>=]]> #fromDate#
+       		</isNotNull>
+       		<isNotNull property="toDate" prepend="and">
+       			BIZ_DATE<![CDATA[<=]]>#toDate#
+       		</isNotNull>
        </dynamic>
     </select>
     

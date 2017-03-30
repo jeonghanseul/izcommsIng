@@ -254,12 +254,13 @@
 							<td>구분</td>
 							<td>날짜</td>
 							<td>쿠키정보</td>
+							<td>키워드</td>
 							<td>유입경로</td>
 							<td>회사명</td>
-							<td>업종</td>
+<!-- 							<td>업종</td> -->
 							<td>담당자</td>
 							<td>연락처</td>
-							<td>지역</td>
+<!-- 							<td>지역</td> -->
 <!-- 							<td>이메일</td> -->
 <!-- 							<td>상담내용</td> -->
 							<td>배정현황</td>
@@ -315,6 +316,9 @@
 									
 								</td>
 								<td>
+									<c:out value="${selectAdManagerList.adKeyWord}"></c:out>
+								</td>
+								<td>
 									<c:choose>
 										<c:when test="${selectAdManagerList.adGroup eq 'AdCenter1'}">
 											키워드광고
@@ -336,9 +340,9 @@
 										</c:when>
 									</c:choose>	
 							</td>
-								<td class="mail_content_txt_type4">
-									<c:out value="${selectAdManagerList.bizName}"></c:out>
-								</td>
+<!-- 								<td class="mail_content_txt_type4"> -->
+<%-- 									<c:out value="${selectAdManagerList.bizName}"></c:out> --%>
+<!-- 								</td> -->
 								<td>
 									<c:out value="${selectAdManagerList.bizType}"></c:out>
 								</td>
@@ -348,9 +352,9 @@
 								<td>
 									<c:out value="${selectAdManagerList.bizTelNo}"></c:out>
 								</td>
-								<td>
-									<c:out value="${selectAdManagerList.bizArea}"></c:out>
-								</td>
+<!-- 								<td> -->
+<%-- 									<c:out value="${selectAdManagerList.bizArea}"></c:out> --%>
+<!-- 								</td> -->
 <!-- 								<td> -->
 <%-- 									<c:out value="${selectAdManagerList.bizEmail}"></c:out> --%>
 <!-- 								</td> -->

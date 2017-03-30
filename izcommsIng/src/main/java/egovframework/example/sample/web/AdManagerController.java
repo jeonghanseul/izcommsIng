@@ -109,16 +109,17 @@ public class AdManagerController
  * @throws Exception
  */
 @RequestMapping("/adChartCount.do")
-  public ModelAndView adChartCount()
+  public ModelAndView adChartCount(String fromDate, String toDate)
     throws Exception
   {
     ModelAndView mav = new ModelAndView("jsonView");
     
     for(int i=0; i<=4; i++){
-    	
-    	int value = adManagerService.selectCountAdCenter(i);
+    	int value = adManagerService.selectCountAdCenter(i, fromDate, toDate);
     	mav.addObject("Ad"+i, value);
     	System.out.println("-------------------------------------------------------");
+    	System.out.println("\t fromDate : "+fromDate);
+    	System.out.println("\t toDate : "+toDate);
     	System.out.println("\t mav : "+mav);
     	System.out.println("-------------------------------------------------------");
     }

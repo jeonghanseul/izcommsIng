@@ -24,8 +24,36 @@ public class AdManagerVO
   private String adCenter2;
   private String adCenter3;
   private String adCenter4;
+  private String adKeyWord;
+  /* 차트를 위한 vo*/
+  private String fromDate;
+  private String toDate;
   
-  public String getAdCenter() {
+  public String getFromDate() {
+	return fromDate;
+}
+
+public void setFromDate(String fromDate) {
+	this.fromDate = fromDate;
+}
+
+public String getToDate() {
+	return toDate;
+}
+
+public void setToDate(String toDate) {
+	this.toDate = toDate;
+}
+
+public String getAdKeyWord() {
+	return adKeyWord;
+}
+
+public void setAdKeyWord(String adKeyWord) {
+	this.adKeyWord = adKeyWord;
+}
+
+public String getAdCenter() {
 	return adCenter;
 }
 

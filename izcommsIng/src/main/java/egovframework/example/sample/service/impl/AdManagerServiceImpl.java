@@ -60,11 +60,15 @@ public class AdManagerServiceImpl
     this.adManagerDAO.insertAdManager(adManagerVO);
   }
   
-  public int selectCountAdCenter(int i) throws Exception{
+  public int selectCountAdCenter(int i, String fromDate, String toDate) throws Exception{
 	  AdManagerVO adManagerVO = new AdManagerVO(); 
+	  adManagerVO.setFromDate(fromDate);
+	  adManagerVO.setToDate(toDate);
 	  adManagerVO.setAdCenter("chartAd"+i);
 	  System.out.println("=======================================================");
 	  System.out.println("\t adManagerVO.getAdCenter : "+adManagerVO.getAdCenter());
+	  System.out.println("\t adManagerVO.getFromDate : "+adManagerVO.getFromDate());
+	  System.out.println("\t adManagerVO.getToDate : "+adManagerVO.getToDate());
 	  System.out.println("=======================================================");
 	  return this.selectAdManagerListCount(adManagerVO);
   }

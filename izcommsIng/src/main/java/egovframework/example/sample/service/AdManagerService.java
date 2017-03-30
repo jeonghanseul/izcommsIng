@@ -16,5 +16,5 @@ public interface AdManagerService
   
   public void insertAdManager(AdManagerVO paramAdManagerVO) throws Exception;
   
-  public int selectCountAdCenter(int i) throws Exception;
+  public int selectCountAdCenter(int i, String fromDate, String toDate) throws Exception;
 }

@@ -924,18 +924,6 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .bg .mail_box  .select_box1 a:link {
 
 	 text-decoration: none;
@@ -982,6 +970,128 @@ body{
 
 
 
+/*                            cookie             start                     */
+
+.bg .mail_box  .cookie {
+	width:607px;
+	padding-right: 25px;
+	    position: absolute;
+   	 top: 32px;
+   	 left: 431px;
+
+}
+
+
+.bg .mail_box  .cookie span {
+	display:inline-block;
+	font-size:0px;
+	
+
+}
+.bg .mail_box  .cookie a {
+	    margin-right: -4px;
+	
+
+}
+
+
+.bg .mail_box  .cookie .ad1 {
+	margin-right: -1px;
+    margin-left: 2px;
+	
+}
+.bg .mail_box  .cookie .ad1:hover {
+
+
+}
+.bg .mail_box  .cookie .ad1_ov {
+	margin-right: -1px;
+    margin-left: 2px;
+}
+
+
+
+.bg .mail_box  .cookie .ad2 {
+	 margin-right: -1px;
+    padding-right: 0px;
+}
+
+
+
+}
+.bg .mail_box  .cookie .ad2:hover {
+
+}
+
+.bg .mail_box  .cookie .ad2_ov {
+	    margin-right: -1px;
+    padding-right: 0px;
+
+}
+
+
+
+
+.bg .mail_box  .cookie .ad3 {
+	    margin-right: 0px;
+    margin-left: 1px;
+	
+
+}
+.bg .mail_box  .cookie .ad3:hover {
+	
+}
+.bg .mail_box  .cookie .ad3_ov {
+	margin-right: 0px;
+    margin-left: 1px;
+	
+}
+
+
+
+
+.bg .mail_box  .cookie .ad4 {
+	margin-right: -1px;
+		
+}
+
+.bg .mail_box  .cookie .ad4:hover {
+
+}
+
+.bg .mail_box  .cookie .ad4_ov {
+	margin-right: -1px;
+}
+
+
+.bg .mail_box  .cookie .ad0 {
+	    margin-left: 0px;
+
+}
+
+.bg .mail_box  .cookie .ad0:hover {
+
+}
+
+.bg .mail_box  .cookie .ad0_ov {
+	margin-left: 0px;
+}
+
+
+/*                            cookie             end                     */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -994,8 +1104,8 @@ body{
 	valign:top;
 	height:20px;
 	  text-align:center; 
-	padding-top:30px;
-	padding-bottom:40px;
+	padding-top: 56px;
+            padding-bottom: 32px;
 
 
 }
@@ -1866,19 +1976,3 @@ body{
 .bg .viewScdul .viewScdul_margin {
 	    padding-top: 50px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

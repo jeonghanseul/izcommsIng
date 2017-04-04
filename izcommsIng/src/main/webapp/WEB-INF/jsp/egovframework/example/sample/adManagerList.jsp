@@ -63,7 +63,7 @@
 						<span class="con1"><a href="./adManagerList.do">전체</a></span>
 						<span class="con3_ov"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
 						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
+						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">블로그광고</a></span>
 						<span class="con5"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
 						<span class="con6" ><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
 						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
@@ -131,55 +131,62 @@
 				</c:when>
 			</c:choose>
 			</div>
-			<div>
+			<div class="cookie">
 				<c:choose>
 					<c:when test="${param.adCenter == null}">
 						<!-- 색상변경X -->
-						<span><a href="./adManagerList.do?adCenter=Ad">쿠키1</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad1">쿠키2</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad2">쿠키3</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad3">쿠키4</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad4">쿠키5</a></span>						
+												
+						<a href="./adManagerList.do?adCenter=Ad1"><span class="ad1"><img src="./resources/img/cookie_ad01.jpg" width="108" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad2"><span class="ad2"><img src="./resources/img/cookie_ad02.jpg" width="70" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad3"><span class="ad3"><img src="./resources/img/cookie_ad03.jpg" width="107" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad4"><span class="ad4"><img src="./resources/img/cookie_ad04.jpg" width="132" height="34"></span></a>	
+						<a href="./adManagerList.do?adCenter=Ad"><span class="ad0"><img src="./resources/img/cookie_ad00.jpg" width="140" height="34"></span></a>				
 					</c:when>
-					<c:when test="${param.adCenter eq 'Ad'}">
-						<!-- 쿠키1만 색상변경 -->
-						<span><a href="./adManagerList.do?adCenter=Ad">쿠키1</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad1">쿠키2</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad2">쿠키3</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad3">쿠키4</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad4">쿠키5</a></span>					
-					</c:when>
+					
 					<c:when test="${param.adCenter eq 'Ad1'}">
 						<!-- 쿠키2만 색상변경 -->
-						<span><a href="./adManagerList.do?adCenter=Ad">쿠키1</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad1">쿠키2</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad2">쿠키3</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad3">쿠키4</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad4">쿠키5</a></span>					
+												
+						<a href="./adManagerList.do?adCenter=Ad1"><span class="ad1_ov"><img src="./resources/img/cookie_ad01_ov.jpg" width="108" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad2"><span class="ad2"><img src="./resources/img/cookie_ad02.jpg" width="70" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad3"><span class="ad3"><img src="./resources/img/cookie_ad03.jpg" width="107" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad4"><span class="ad4"><img src="./resources/img/cookie_ad04.jpg" width="132" height="34"></span></a>	
+						<a href="./adManagerList.do?adCenter=Ad"><span class="ad0"><img src="./resources/img/cookie_ad00.jpg" width="140" height="34"></span></a>			
 					</c:when>
 					<c:when test="${param.adCenter eq 'Ad2'}">
 						<!-- 쿠키3만 색상변경 -->
-						<span><a href="./adManagerList.do?adCenter=Ad">쿠키1</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad1">쿠키2</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad2">쿠키3</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad3">쿠키4</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad4">쿠키5</a></span>						
+											
+						<a href="./adManagerList.do?adCenter=Ad1"><span class="ad1"><img src="./resources/img/cookie_ad01.jpg" width="108" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad2"><span class="ad2_ov"><img src="./resources/img/cookie_ad02_ov.jpg" width="70" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad3"><span class="ad3"><img src="./resources/img/cookie_ad03.jpg" width="107" height="34"></span></a>					
+						<a href="./adManagerList.do?adCenter=Ad4"><span class="ad4"><img src="./resources/img/cookie_ad04.jpg" width="132" height="34"></span></a>
+						<a href="./adManagerList.do?adCenter=Ad"><span class="ad0"><img src="./resources/img/cookie_ad00.jpg" width="140" height="34"></span></a>					
 					</c:when>
 					<c:when test="${param.adCenter eq 'Ad3'}">
 						<!-- 쿠키4만 색상변경 -->
-						<span><a href="./adManagerList.do?adCenter=Ad">쿠키1</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad1">쿠키2</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad2">쿠키3</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad3">쿠키4</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad4">쿠키5</a></span>					
+											
+						<a href="./adManagerList.do?adCenter=Ad1"><span class="ad1"><img src="./resources/img/cookie_ad01.jpg" width="108" height="34"></span></a>					
+						<a href="./adManagerList.do?adCenter=Ad2"><span class="ad2"><img src="./resources/img/cookie_ad02.jpg" width="70" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad3"><span class="ad3_ov"><img src="./resources/img/cookie_ad03_ov.jpg" width="107" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad4"><span class="ad4"><img src="./resources/img/cookie_ad04.jpg" width="132" height="34"></span></a>
+						<a href="./adManagerList.do?adCenter=Ad"><span class="ad0"><img src="./resources/img/cookie_ad00.jpg" width="140" height="34"></span></a>				
 					</c:when>
 					<c:when test="${param.adCenter eq 'Ad4'}">
 						<!-- 쿠키5만 색상변경 -->
-						<span><a href="./adManagerList.do?adCenter=Ad">쿠키1</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad1">쿠키2</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad2">쿠키3</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad3">쿠키4</a></span>						
-						<span><a href="./adManagerList.do?adCenter=Ad4">쿠키5</a></span>						
+											
+						<a href="./adManagerList.do?adCenter=Ad1"><span class="ad1"><img src="./resources/img/cookie_ad01.jpg" width="108" height="34"></span></a>					
+						<a href="./adManagerList.do?adCenter=Ad2"><span class="ad2"><img src="./resources/img/cookie_ad02.jpg" width="70" height="34"></span></a>					
+						<a href="./adManagerList.do?adCenter=Ad3"><span class="ad3"><img src="./resources/img/cookie_ad03.jpg" width="107" height="34"></span></a>					
+						<a href="./adManagerList.do?adCenter=Ad4"><span class="ad4_ov"><img src="./resources/img/cookie_ad04_ov.jpg" width="132" height="34"></span></a>	
+						<a href="./adManagerList.do?adCenter=Ad"><span class="ad0"><img src="./resources/img/cookie_ad00.jpg" width="140" height="34"></span></a>					
+					</c:when>
+					<c:when test="${param.adCenter eq 'Ad'}">
+						<!-- 쿠키1만 색상변경 -->
+											
+						<a href="./adManagerList.do?adCenter=Ad1"><span class="ad1"><img src="./resources/img/cookie_ad01.jpg" width="108" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad2"><span class="ad2"><img src="./resources/img/cookie_ad02.jpg" width="70" height="34"></span></a>					
+						<a href="./adManagerList.do?adCenter=Ad3"><span class="ad3"><img src="./resources/img/cookie_ad03.jpg" width="107" height="34"></span></a>					
+						<a href="./adManagerList.do?adCenter=Ad4"><span class="ad4"><img src="./resources/img/cookie_ad04.jpg" width="132" height="34"></span></a>	
+						<a href="./adManagerList.do?adCenter=Ad"><span class="ad0_ov"><img src="./resources/img/cookie_ad00_ov.jpg" width="140" height="34"></span></a>					
 					</c:when>
 				</c:choose>
 			</div>

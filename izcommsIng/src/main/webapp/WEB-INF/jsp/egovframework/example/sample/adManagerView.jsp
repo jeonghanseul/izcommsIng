@@ -49,10 +49,10 @@
 											메일
 										</c:when>
 										<c:when test="${adManagerVO.adGroup eq 'AdCenter3'}">
-											리타겟팅 광고
+											블로그 광고
 										</c:when>
 										<c:when test="${adManagerVO.adGroup eq 'AdCenter4'}">
-											브랜드검색광고
+											리타겟팅 광고
 										</c:when>
 										<c:when test="${adManagerVO.adGroup eq 'AdCenter'}">
 											입점 및 제휴문의

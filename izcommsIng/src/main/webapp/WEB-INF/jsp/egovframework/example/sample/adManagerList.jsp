@@ -14,9 +14,9 @@
 <script type="text/javascript">
 	function fn_egov_link_page(pageNo){
 
-		document.listForm.pageIndex.value = pageNo;
-    	document.listForm.action = "<c:url value='./adManagerList.do'/>";
-       	document.listForm.submit();
+		document.listFormPage.pageIndex.value = pageNo;
+    	document.listFormPage.action = "<c:url value='./adManagerList.do'/>";
+       	document.listFormPage.submit();
 	}
 	function deleteDo(no){
 		if(confirm("항목을 삭제하시겠습니까?") == true){
@@ -36,103 +36,112 @@
 				<c:when test="${param.adGroup == null}">
 					<div class="select_box1_type1">
 						<!-- 전체만 색상변경 -->
-						<span class="con1_ov"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4" ><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
-						<span class="con5" ><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6"><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1_ov">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4" >블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5" >브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == ''}">
 					<div class="select_box1_type2">
 						<!-- 전체만 색상변경 -->
-						<span class="con1_ov"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
-						<span class="con5"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6"><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1_ov">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == 'AdCenter1'}">
 					<div class="select_box1_type3">
 						<!-- 메일만 색상변경 -->
-						<span class="con1"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3_ov"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">블로그광고</a></span>
-						<span class="con5"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6" ><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3_ov">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6" >입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == 'AdCenter2'}">
 					<div class="select_box1_type4">
 						<!-- 키워드광고만 색상변경 -->
-						<span class="con1"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2_ov"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
-						<span class="con5"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6"><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2_ov">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == 'AdCenter3'}">
 					<div class="select_box1_type5">
 						<!-- 기자단만 색상변경 -->
-						<span class="con1"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4_ov"><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
-						<span class="con5"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6"><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4_ov">블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == 'AdCenter4'}">
 					<div class="select_box1_type6">
 						<!-- 브랜드검색광고만 색상변경 -->
-						<span class="con1"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
-						<span class="con5_ov"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6"><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5_ov">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == 'AdCenter'}">
 					<div class="select_box1_type7">
 						<!-- 입점 및 제휴문의만 색상변경 -->
-						<span class="con1"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
-						<span class="con5"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6_ov"><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6_ov">입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == 'AdCenterTel'}">
 					<div class="select_box1_type8">
 						<!-- 전화문의만 색상변경 -->
-						<span class="con1"><a href="./adManagerList.do">전체</a></span>
-						<span class="con3"><a href="./adManagerList.do?adGroup=AdCenter1">키워드광고</a></span>
-						<span class="con2"><a href="./adManagerList.do?adGroup=AdCenter2">메일</a></span>
-						<span class="con4"><a href="./adManagerList.do?adGroup=AdCenter3">리타겟팅 광고</a></span>
-						<span class="con5"><a href="./adManagerList.do?adGroup=AdCenter4">브랜드검색광고</a></span>
-						<span class="con6"><a href="./adManagerList.do?adGroup=AdCenter">입점 및 제휴문의</a></span>
-						<span class="con7_ov"><a href="./adManagerList.do?adGroup=AdCenterTel">전화문의</a></span>
+						<a href="./adManagerList.do"><span class="con1">전체</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7_ov">전화문의</span></a>
 					</div>
 				</c:when>
 			</c:choose>
 			</div>
 			<div class="cookie">
 				<c:choose>
+					<c:when test="${param.adCenter == ''}">
+						<!-- 색상변경X -->
+												
+						<a href="./adManagerList.do?adCenter=Ad1"><span class="ad1"><img src="./resources/img/cookie_ad01.jpg" width="108" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad2"><span class="ad2"><img src="./resources/img/cookie_ad02.jpg" width="70" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad3"><span class="ad3"><img src="./resources/img/cookie_ad03.jpg" width="107" height="34"></span></a>						
+						<a href="./adManagerList.do?adCenter=Ad4"><span class="ad4"><img src="./resources/img/cookie_ad04.jpg" width="132" height="34"></span></a>	
+						<a href="./adManagerList.do?adCenter=Ad"><span class="ad0"><img src="./resources/img/cookie_ad00.jpg" width="140" height="34"></span></a>				
+					</c:when>
 					<c:when test="${param.adCenter == null}">
 						<!-- 색상변경X -->
 												
@@ -195,21 +204,20 @@
 				<a href="./adManagerChartView.do">차트확인하기</a>
 			</div>
 			
-			<form:form commandName="adManagerVO" action="./adManagerList.do" id="listForm" name="listForm" method="get">
 				<div>
 					<div class="select_box2">
-						<form:select path="searchCondition" class="mail_select">
-							<form:option value="ALL">전체내용</form:option>
-							<form:option value="User">담당자</form:option>
-							<form:option value="Tel">연락처</form:option>
-							<form:option value="Type">업종</form:option>
-							<form:option value="Ask">문의사항</form:option>
-							<form:option value="Area">지역</form:option>
-						</form:select>
-					
-						<form:input path="searchKeyword" class="searchKeyword" />
-						<input type="image" src="./resources/img/search.png" class="span_type3" >
-					
+						<form:form commandName="adManagerVO" action="./adManagerList.do" id="listForm" name="listForm" method="get">
+							<form:select path="searchCondition" class="mail_select">
+								<form:option value="ALL">전체내용</form:option>
+								<form:option value="User">담당자</form:option>
+								<form:option value="Tel">연락처</form:option>
+								<form:option value="Type">업종</form:option>
+								<form:option value="Ask">문의사항</form:option>
+								<form:option value="Area">지역</form:option>
+							</form:select>
+							<form:input path="searchKeyword" class="searchKeyword" />
+							<input type="image" src="./resources/img/search.png" class="span_type3" >
+						</form:form>
 						<c:choose>
 							<c:when test="${param.bizAllot == null}">
 								<!-- 전체만 색상 변경 -->
@@ -334,7 +342,7 @@
 											메일
 										</c:when>
 										<c:when test="${selectAdManagerList.adGroup eq 'AdCenter3'}">
-											리타겟팅 광고
+											블로그광고
 										</c:when>
 										<c:when test="${selectAdManagerList.adGroup eq 'AdCenter4'}">
 											브랜드검색광고
@@ -347,9 +355,6 @@
 										</c:when>
 									</c:choose>	
 							</td>
-<!-- 								<td class="mail_content_txt_type4"> -->
-<%-- 									<c:out value="${selectAdManagerList.bizName}"></c:out> --%>
-<!-- 								</td> -->
 								<td>
 									<c:out value="${selectAdManagerList.bizType}"></c:out>
 								</td>
@@ -359,15 +364,6 @@
 								<td>
 									<c:out value="${selectAdManagerList.bizTelNo}"></c:out>
 								</td>
-<!-- 								<td> -->
-<%-- 									<c:out value="${selectAdManagerList.bizArea}"></c:out> --%>
-<!-- 								</td> -->
-<!-- 								<td> -->
-<%-- 									<c:out value="${selectAdManagerList.bizEmail}"></c:out> --%>
-<!-- 								</td> -->
-<!-- 								<td> -->
-<%-- 									<c:out value="${selectAdManagerList.bizCounsel}"></c:out> --%>
-<!-- 								</td> -->
 								<td class="mail_content_txt_type11">
 									<c:choose>
 										<c:when test="${selectAdManagerList.bizAllot eq 'N'}">
@@ -395,11 +391,36 @@
 						</c:if>
 					</tbody>
 				</table>
-				<div class="paging">
-			   		<ui:pagination paginationInfo = "${paginationInfo}" type="image" jsFunction="fn_egov_link_page" />
-			   		<form:hidden path="pageIndex" />
-			   	</div>
-			</form:form>
+				<form:form commandName="adManagerVO" action="./adManagerList.do" id="listFormPage" name="listFormPage" method="get">
+					<div class="paging">
+				   		<ui:pagination paginationInfo = "${paginationInfo}" type="image" jsFunction="fn_egov_link_page" />
+				   		<form:hidden path="pageIndex" />
+				   		<c:choose>
+				   			<c:when test="${param.adCenter == '' || param.adCenter == null}"></c:when>
+				   			<c:otherwise>
+				   				<form:hidden path="adCenter" /> 	
+				   			</c:otherwise>
+				   		</c:choose>
+				   		<c:choose>
+				   			<c:when test="${param.adGroup == '' || param.adGroup == null}"></c:when>
+				   			<c:otherwise>
+				   				<form:hidden path="adGroup" /> 	
+				   			</c:otherwise>
+				   		</c:choose>
+				   		<c:choose>
+				   			<c:when test="${param.searchCondition == '' || param.searchCondition == null}"></c:when>
+				   			<c:otherwise>
+				   				<form:hidden path="searchCondition" /> 	
+				   			</c:otherwise>
+				   		</c:choose>
+				   		<c:choose>
+				   			<c:when test="${param.searchKeyword == '' || param.searchKeyword == null}"></c:when>
+				   			<c:otherwise>
+				   				<form:hidden path="searchKeyword" /> 	
+				   			</c:otherwise>
+				   		</c:choose>
+				   	</div>
+			   	</form:form>
 		<div class="register_margin">
 			<c:choose>
 				<c:when test="${param.adGroup == 'AdCenterTel'}">

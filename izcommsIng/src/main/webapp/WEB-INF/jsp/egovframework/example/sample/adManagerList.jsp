@@ -40,7 +40,7 @@
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4" >블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5" >브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5" >리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
@@ -52,7 +52,7 @@
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
@@ -64,7 +64,7 @@
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3_ov">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6" >입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
@@ -76,7 +76,7 @@
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2_ov">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
@@ -88,19 +88,19 @@
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4_ov">블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
 				</c:when>
 				<c:when test="${param.adGroup == 'AdCenter4'}">
 					<div class="select_box1_type6">
-						<!-- 브랜드검색광고만 색상변경 -->
+						<!-- 리타겟팅 광고만 색상변경 -->
 						<a href="./adManagerList.do"><span class="con1">전체</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5_ov">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5_ov">리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
@@ -112,7 +112,7 @@
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6_ov">입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7">전화문의</span></a>
 					</div>
@@ -124,7 +124,7 @@
 						<a href="./adManagerList.do?adGroup=AdCenter1"><span class="con3">키워드광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter2"><span class="con2">메일</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter3"><span class="con4">블로그광고</span></a>
-						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">브랜드검색광고</span></a>
+						<a href="./adManagerList.do?adGroup=AdCenter4"><span class="con5">리타겟팅 광고</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenter"><span class="con6">입점 및 제휴문의</span></a>
 						<a href="./adManagerList.do?adGroup=AdCenterTel"><span class="con7_ov">전화문의</span></a>
 					</div>
@@ -269,7 +269,7 @@
 							<td>구분</td>
 							<td>날짜</td>
 							<td>쿠키정보</td>
-							<td>키워드</td>
+							<td>프로모션코드</td>
 							<td>유입경로</td>
 							<td>회사명</td>
 <!-- 							<td>업종</td> -->
@@ -331,7 +331,7 @@
 									
 								</td>
 								<td>
-									<c:out value="${selectAdManagerList.adKeyWord}"></c:out>
+									<c:out value="${selectAdManagerList.couoponCode}"></c:out>
 								</td>
 								<td>
 									<c:choose>
@@ -345,7 +345,7 @@
 											블로그광고
 										</c:when>
 										<c:when test="${selectAdManagerList.adGroup eq 'AdCenter4'}">
-											브랜드검색광고
+											리타겟팅 광고
 										</c:when>
 										<c:when test="${selectAdManagerList.adGroup eq 'AdCenter'}">
 											입점 및 제휴문의
@@ -355,15 +355,29 @@
 										</c:when>
 									</c:choose>	
 							</td>
+ 								<td class="mail_content_txt_type4">
+ 									<c:out value="${selectAdManagerList.bizName}"></c:out>
+ 								</td>
+<!--
 								<td>
 									<c:out value="${selectAdManagerList.bizType}"></c:out>
 								</td>
+-->
 								<td>
 									<c:out value="${selectAdManagerList.bizUser}"></c:out>
 								</td>
 								<td>
 									<c:out value="${selectAdManagerList.bizTelNo}"></c:out>
 								</td>
+<!-- 								<td> -->
+<%-- 									<c:out value="${selectAdManagerList.bizArea}"></c:out> --%>
+<!-- 								</td> -->
+<!-- 								<td> -->
+<%-- 									<c:out value="${selectAdManagerList.bizEmail}"></c:out> --%>
+<!-- 								</td> -->
+<!-- 								<td> -->
+<%-- 									<c:out value="${selectAdManagerList.bizCounsel}"></c:out> --%>
+<!-- 								</td> -->
 								<td class="mail_content_txt_type11">
 									<c:choose>
 										<c:when test="${selectAdManagerList.bizAllot eq 'N'}">

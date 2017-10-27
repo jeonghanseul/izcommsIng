@@ -24,6 +24,7 @@
 	    <result property="adCenter3" column="AD_CENTER3"/>
 	    <result property="adCenter4" column="AD_CENTER4"/>
 	    <result property="adKeyWord" column="AD_KEYWORD"/>
+	    <result property="couoponCode" column="COUOPON_CODE"/>
     </resultMap>
     
 	<resultMap id="adManagerViewMap" class="egovframework.example.sample.service.AdManagerVO">
@@ -42,6 +43,7 @@
 	    <result property="adExpectMoney" column="AD_EXPECT_MONEY"/>
 	    <result property="adAding" column="AD_ADING"/>
 	    <result property="adExperienceDate" column="AD_EXPERIENCE_DATE"/>
+	    <result property="couoponCode" column="COUOPON_CODE"/>
     </resultMap>
     
     <select id="adManagerDAO.selectAdManagerList" parameterClass="adManagerVO" resultMap="adManagerMap">

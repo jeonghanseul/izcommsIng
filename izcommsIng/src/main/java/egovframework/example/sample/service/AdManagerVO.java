@@ -25,11 +25,21 @@ public class AdManagerVO
   private String adCenter3;
   private String adCenter4;
   private String adKeyWord;
+  private String couoponCode;
+  
   /* 차트를 위한 vo*/
   private String fromDate;
   private String toDate;
-  
-  public String getFromDate() {
+
+  public String getCouoponCode() {
+	return couoponCode;
+}
+
+public void setCouoponCode(String couoponCode) {
+	this.couoponCode = couoponCode;
+}
+
+public String getFromDate() {
 	return fromDate;
 }
 

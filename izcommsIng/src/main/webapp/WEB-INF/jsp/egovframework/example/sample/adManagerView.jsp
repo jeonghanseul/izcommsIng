@@ -92,8 +92,8 @@
 							<td class="mail_content_txt_in">${adManagerVO.bizCounsel}</td>
 					</tr>
 					<tr>
-							<td class="mail_title_in">예상광고예산</td>
-							<td class="mail_content_txt_in">${adManagerVO.adExpectMoney}</td>
+							<td class="mail_title_in">프로모션코드</td>
+							<td class="mail_content_txt_in">${adManagerVO.couoponCode}</td>
 					</tr>
 					<tr>
 							<td class="mail_title_in">홈페이지</td>

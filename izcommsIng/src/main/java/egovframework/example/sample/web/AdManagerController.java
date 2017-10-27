@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import egovframework.example.sample.service.AdManagerService;
 import egovframework.example.sample.service.AdManagerVO;
-import egovframework.example.sample.service.MemberVO;
 import egovframework.rte.fdl.property.EgovPropertyService;
 import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
